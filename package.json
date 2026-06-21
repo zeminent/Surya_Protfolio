@@ -1,0 +1,23 @@
+{
+  "name": "suryateja-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cinematic portfolio hero for SuryaTeja Pathuri — Next.js, Three.js, GSAP",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.5"
+  }
+}

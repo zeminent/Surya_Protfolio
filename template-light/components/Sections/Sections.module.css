@@ -1,0 +1,260 @@
+.wrap {
+  padding: 0 clamp(1.5rem, 5vw, 5rem);
+}
+
+/* ===== Section shell ===== */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(4rem, 11vh, 9rem) 0;
+  border-top: 1px solid var(--line);
+}
+.section:first-of-type {
+  border-top: none;
+}
+
+/* ===== Section head ===== */
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: clamp(2rem, 5vh, 3.5rem);
+}
+.headNum {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  padding-top: 0.4rem;
+}
+.headTitle {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Who I Am ===== */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+.aboutLabel {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.7rem;
+}
+.aboutLead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.6vw, 2.1rem);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 24ch;
+  max-width: 32ch;
+}
+.mark {
+  color: var(--ink);
+  font-style: italic;
+  background: linear-gradient(180deg, transparent 64%, rgba(31, 58, 255, 0.18) 0);
+}
+
+/* ===== Tags ===== */
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+.tag {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--paper-2);
+  border-radius: 999px;
+}
+.tagOutline {
+  padding: 0.32rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.section .tagRow {
+  margin-top: 2.4rem;
+}
+
+/* ===== Technical Skills ===== */
+.skillList {
+  display: flex;
+  flex-direction: column;
+}
+.skillRow {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+.skillRow:first-child {
+  border-top: none;
+}
+.skillRow .tagRow {
+  margin-top: 0;
+}
+.skillLabel {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* ===== Education ===== */
+.eduList {
+  display: flex;
+  flex-direction: column;
+}
+.eduRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--line);
+}
+.eduRow:first-child {
+  border-top: none;
+}
+.eduYear {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding-top: 0.35rem;
+}
+.eduDegree {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.eduSchool {
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.eduMeta {
+  color: var(--muted);
+}
+
+/* ===== Projects ===== */
+.projList {
+  display: flex;
+  flex-direction: column;
+}
+.projRow {
+  padding: 2.4rem 0;
+  border-top: 1px solid var(--line);
+  transition: padding-left 0.4s var(--ease);
+}
+.projRow:first-child {
+  border-top: none;
+}
+.projRow:hover {
+  padding-left: 1rem;
+}
+.projTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.projCompany {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+.projSub {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.projYear {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.projDesc {
+  max-width: 70ch;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 9rem) 0 4rem;
+  border-top: 1px solid var(--line);
+}
+.footBig {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.4rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+.footLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+.footLinks a {
+  position: relative;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--accent);
+  transition: color 0.3s var(--ease);
+}
+.footLinks a:hover {
+  color: var(--accent);
+}
+.footCopy {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  .aboutGrid,
+  .skillRow,
+  .eduRow {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .aboutLabel,
+  .eduYear {
+    padding-top: 0;
+  }
+  .projRow:hover {
+    padding-left: 0;
+  }
+}
