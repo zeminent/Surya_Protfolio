@@ -1,0 +1,274 @@
+/* ===== "Third page" — horizontal scroll showcase ===== */
+.section {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(255, 122, 24, 0.06), transparent 55%),
+    linear-gradient(180deg, #07060a 0%, #0a0810 55%, #07060a 100%);
+}
+
+/* The horizontal track — flex row wider than the viewport.
+   GSAP translates this on X while the section is pinned. */
+.track {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  height: 100vh;
+  padding: 0 clamp(1.5rem, 6vw, 6rem);
+  width: max-content;
+  will-change: transform;
+}
+
+/* ===== Panels ===== */
+.panel {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(86vw, 560px);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 3.5vw, 3.2rem);
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(130% 130% at 100% 0%, rgba(255, 122, 24, 0.14), transparent 52%),
+    linear-gradient(180deg, #110c16 0%, #0b0911 100%);
+  border: 1px solid rgba(255, 122, 24, 0.18);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: border-color 0.4s var(--ease-cinematic),
+    transform 0.4s var(--ease-cinematic);
+}
+.panel:hover {
+  border-color: rgba(255, 122, 24, 0.5);
+  transform: translateY(-6px);
+}
+/* Warm light pooling at the bottom */
+.panel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: radial-gradient(80% 100% at 30% 100%, rgba(255, 122, 24, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== Intro panel ===== */
+.intro {
+  width: min(86vw, 460px);
+  background:
+    radial-gradient(120% 120% at 0% 100%, rgba(255, 122, 24, 0.16), transparent 55%),
+    linear-gradient(180deg, #0b0911 0%, #07060a 100%);
+  border-color: rgba(255, 122, 24, 0.12);
+}
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+.bigTitle {
+  margin: 0 0 1.4rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.3),
+    0 0 44px rgba(255, 170, 90, 0.28);
+}
+.hot {
+  color: var(--accent-soft);
+}
+.introLead {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+.scrollHint {
+  margin: 2.4rem 0 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.scrollHint span {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: var(--accent);
+  animation: nudge 1.6s var(--ease-cinematic) infinite;
+}
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+/* ===== Big faint index ===== */
+.index {
+  position: absolute;
+  top: clamp(1.2rem, 3vw, 2rem);
+  right: clamp(1.4rem, 3.5vw, 2.6rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 122, 24, 0.28);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ===== Panel content ===== */
+.panelHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.6rem;
+}
+.company {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+.sub {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.period {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.role {
+  margin: 0 0 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.items {
+  margin: 0 0 1.4rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  overflow-y: auto;
+}
+.items li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: clamp(0.9rem, 1.3vw, 1.02rem);
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+.items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.items strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ===== Pills ===== */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pill {
+  padding: 0.42rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+.pill:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 122, 24, 0.12);
+  border-color: rgba(255, 122, 24, 0.4);
+}
+
+/* ===== Scroll progress bar ===== */
+.progress {
+  position: absolute;
+  left: clamp(1.5rem, 6vw, 6rem);
+  right: clamp(1.5rem, 6vw, 6rem);
+  bottom: clamp(2rem, 5vh, 3.2rem);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progressFill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ===== Mobile fallback — native horizontal swipe, no scroll-jack ===== */
+@media (max-width: 767px) {
+  .section {
+    overflow: visible;
+  }
+  .track {
+    height: auto;
+    width: auto;
+    transform: none !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: clamp(4rem, 12vh, 7rem) 1.2rem;
+    align-items: stretch;
+  }
+  .panel {
+    width: 84vw;
+    max-height: none;
+    scroll-snap-align: center;
+  }
+  .progress {
+    display: none;
+  }
+}

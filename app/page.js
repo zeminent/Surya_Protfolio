@@ -1,5 +1,6 @@
 import VideoIntro from "@/components/VideoIntro/VideoIntro";
 import AboutSections from "@/components/AboutSections/AboutSections";
+import Projects from "@/components/Projects/Projects";
 
 export default function Home() {
   return (
@@ -26,6 +27,9 @@ export default function Home() {
 
       {/* Second page — Who I Am, Technical Skills, Education */}
       <AboutSections />
+
+      {/* Third page — Projects (horizontal scroll showcase) */}
+      <Projects />
     </main>
   );
 }
